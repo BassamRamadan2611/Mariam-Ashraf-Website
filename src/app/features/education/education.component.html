@@ -1,0 +1,60 @@
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-header" appScrollReveal="fade-up">
+      <span class="section-tag">{{ 'edu_tag' | translate }}</span>
+      <h2>{{ 'edu_title' | translate }}</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="edu-layout">
+      <div class="edu-main" appScrollReveal="fade-right" [revealDelay]="100">
+        <h3 class="subsection-title">
+          <i class="fa-solid fa-graduation-cap"></i> {{ 'edu_degrees' | translate }}
+        </h3>
+        <div class="edu-cards">
+          <div
+            class="edu-card card"
+            *ngFor="let edu of education; let i = index"
+            appScrollReveal="slide-up"
+            [revealDelay]="200 + i * 120">
+            <div class="edu-icon">
+              <i class="fa-solid fa-university"></i>
+            </div>
+            <div class="edu-body">
+              <h4>{{ edu.degree }}</h4>
+              <p class="edu-institution">{{ edu.institution }}</p>
+              <p class="edu-period">
+                <i class="fa-regular fa-calendar"></i> {{ edu.period }}
+              </p>
+              <p class="edu-grade" *ngIf="edu.grade">
+                <i class="fa-solid fa-star"></i> {{ edu.grade }}
+              </p>
+              <p class="edu-detail" *ngIf="edu.detail">{{ edu.detail }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="courses-panel" appScrollReveal="fade-left" [revealDelay]="150">
+        <h3 class="subsection-title">
+          <i class="fa-solid fa-certificate"></i> {{ 'edu_courses' | translate }}
+        </h3>
+        <div class="course-list">
+          <div
+            class="course-item card"
+            *ngFor="let course of courses; let i = index"
+            appScrollReveal="fade-up"
+            [revealDelay]="250 + i * 90">
+            <div class="course-icon">
+              <i class="fa-solid fa-medal"></i>
+            </div>
+            <div>
+              <p class="course-title">{{ course.title }}</p>
+              <p class="course-provider">{{ course.provider }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

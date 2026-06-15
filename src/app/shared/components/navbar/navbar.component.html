@@ -1,0 +1,44 @@
+<nav class="navbar" [class.scrolled]="scrolled">
+  <div class="container nav-inner">
+    <a class="brand" (click)="scrollTo('#hero')">
+      <span class="brand-bracket">&lt;</span>MA<span class="brand-bracket">/&gt;</span>
+    </a>
+
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li *ngFor="let link of links">
+        <a (click)="scrollTo(link.href)">{{ link.key | translate }}</a>
+      </li>
+      <li>
+        <a class="btn btn-primary nav-cta" href="mailto:mariamash70@gmail.com">
+          <i class="fa-solid fa-paper-plane"></i> {{ 'nav_hire' | translate }}
+        </a>
+      </li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Language toggle -->
+      <button class="lang-toggle" (click)="ts.toggle()" [title]="ts.isAr ? 'Switch to English' : 'التبديل للعربية'">
+        <span class="lang-label">{{ ts.isAr ? 'EN' : 'AR' }}</span>
+      </button>
+
+      <!-- Theme toggle -->
+      <button
+        class="theme-toggle"
+        (click)="themeService.toggle()"
+        [title]="themeService.isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+        [attr.aria-label]="themeService.isDark ? 'Switch to light mode' : 'Switch to dark mode'">
+        <span class="toggle-track" [class.light]="!themeService.isDark">
+          <span class="toggle-thumb">
+            <i class="fa-solid" [class.fa-moon]="themeService.isDark" [class.fa-sun]="!themeService.isDark"></i>
+          </span>
+        </span>
+      </button>
+
+      <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-overlay" [class.active]="menuOpen" (click)="closeMenu()"></div>

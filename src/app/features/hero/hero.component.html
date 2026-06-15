@@ -1,0 +1,92 @@
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="hero-text">
+      <p class="hero-greeting">
+        <span class="code-tag">{{ 'hero_greeting' | translate }}</span>
+      </p>
+      <h1 class="hero-name">
+        {{ 'hero_name_first' | translate }}<br>
+        <span class="gradient-text">{{ 'hero_name_last' | translate }}</span>
+      </h1>
+      <h2 class="hero-role">
+        <span class="role-icon"><i class="fa-solid fa-code"></i></span>
+        {{ 'hero_role' | translate }}
+      </h2>
+      <p class="hero-tagline">{{ 'hero_tagline' | translate }}</p>
+
+      <div class="hero-meta">
+        <span><i class="fa-solid fa-location-dot"></i> {{ 'hero_location' | translate }}</span>
+        <span><i class="fa-solid fa-circle status-dot"></i> {{ 'hero_available' | translate }}</span>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" (click)="scrollTo('#contact')">
+          <i class="fa-solid fa-paper-plane"></i> {{ 'hero_cta_contact' | translate }}
+        </a>
+        <a class="btn btn-outline" (click)="scrollTo('#projects')">
+          <i class="fa-solid fa-folder-open"></i> {{ 'hero_cta_projects' | translate }}
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/mariam-ashraf" target="_blank" rel="noopener" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/mariam-ashraf" target="_blank" rel="noopener" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:mariamash70@gmail.com" title="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="tel:+201096838500" title="Phone">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="avatar-wrapper">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring ring-2"></div>
+        <div class="avatar">
+          <span class="avatar-initials">MA</span>
+        </div>
+        <div class="floating-badge badge-1">
+          <i class="fa-brands fa-php"></i> PHP
+        </div>
+        <div class="floating-badge badge-2">
+          <i class="fa-brands fa-angular"></i> Angular
+        </div>
+        <div class="floating-badge badge-3">
+          <i class="fa-brands fa-wordpress"></i> WordPress
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">{{ 'hero_stat_years' | translate }}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">15+</span>
+          <span class="stat-label">{{ 'hero_stat_projects' | translate }}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">{{ 'hero_stat_wp' | translate }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint" (click)="scrollTo('#about')">
+    <span>{{ 'hero_scroll' | translate }}</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>

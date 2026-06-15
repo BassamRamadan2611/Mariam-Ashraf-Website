@@ -1,0 +1,70 @@
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header" appScrollReveal="fade-up">
+      <span class="section-tag">{{ 'about_tag' | translate }}</span>
+      <h2>{{ 'about_title' | translate }}</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text" appScrollReveal="fade-right" [revealDelay]="100">
+        <p [innerHTML]="'about_p1' | translate"></p>
+        <p [innerHTML]="'about_p2' | translate"></p>
+        <p [innerHTML]="'about_p3' | translate"></p>
+
+        <div class="about-info">
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:{{ profile.phone }}">{{ profile.phone }}</a>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>{{ 'hero_location' | translate }}</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-language"></i>
+            <span>{{ profile.languages.join(' · ') }}</span>
+          </div>
+        </div>
+
+        <div class="about-actions">
+          <a class="btn btn-primary" href="mailto:mariamash70@gmail.com">
+            <i class="fa-solid fa-paper-plane"></i> {{ 'about_contact' | translate }}
+          </a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/mariam-ashraf" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="about-cards">
+        <div
+          class="highlight-card card"
+          *ngFor="let h of highlights; let i = index"
+          appScrollReveal="zoom-in"
+          [revealDelay]="150 + i * 80">
+          <div class="card-icon">
+            <i [class]="h.icon"></i>
+          </div>
+          <h4>{{ h.labelKey | translate }}</h4>
+          <p>{{ h.descKey | translate }}</p>
+        </div>
+
+        <div class="volunteer-card card" appScrollReveal="fade-up" [revealDelay]="400">
+          <h4><i class="fa-solid fa-heart-pulse"></i> {{ 'about_volunteer_title' | translate }}</h4>
+          <ul>
+            <li *ngFor="let v of volunteerWork">
+              <span class="v-role">{{ v.role }}</span>
+              <span class="v-org">{{ v.organization }}</span>
+              <span class="v-period">{{ v.period }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

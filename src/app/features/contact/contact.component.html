@@ -1,0 +1,67 @@
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header" appScrollReveal="fade-up">
+      <span class="section-tag">{{ 'contact_tag' | translate }}</span>
+      <h2>{{ 'contact_title' | translate }}</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-left" appScrollReveal="fade-right" [revealDelay]="100">
+        <h3>{{ 'contact_heading' | translate }}</h3>
+        <p>{{ 'contact_body' | translate }}</p>
+
+        <div class="contact-cards">
+          <a
+            class="contact-card card"
+            *ngFor="let item of contactInfo; let i = index"
+            [href]="item.href || 'javascript:void(0)'"
+            [target]="item.href && item.href.startsWith('http') ? '_blank' : '_self'"
+            [rel]="item.href && item.href.startsWith('http') ? 'noopener' : null"
+            [class.no-link]="!item.href"
+            appScrollReveal="fade-up"
+            [revealDelay]="200 + i * 80">
+            <div class="contact-icon">
+              <i [class]="item.icon"></i>
+            </div>
+            <div>
+              <p class="contact-label">{{ item.label }}</p>
+              <p class="contact-value">{{ item.value }}</p>
+            </div>
+            <i class="fa-solid fa-arrow-right arrow-icon" *ngIf="item.href"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right" appScrollReveal="fade-left" [revealDelay]="200">
+        <div class="cta-box card">
+          <div class="cta-icon">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h3>{{ 'contact_cta_title' | translate }}</h3>
+          <p>{{ 'contact_cta_body' | translate }}</p>
+          <a class="btn btn-primary" href="mailto:mariamash70@gmail.com">
+            <i class="fa-solid fa-paper-plane"></i> {{ 'contact_send' | translate }}
+          </a>
+
+          <div class="social-row">
+            <span>{{ 'contact_find' | translate }}</span>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/mariam-ashraf" target="_blank" rel="noopener" title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/mariam-ashraf" target="_blank" rel="noopener" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="availability-badge" appScrollReveal="zoom-in" [revealDelay]="400">
+          <span class="avail-dot"></span>
+          {{ 'contact_available' | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

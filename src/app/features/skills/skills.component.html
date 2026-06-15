@@ -1,0 +1,27 @@
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-header" appScrollReveal="fade-up">
+      <span class="section-tag">{{ 'skills_tag' | translate }}</span>
+      <h2>{{ 'skills_title' | translate }}</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div
+        class="skill-group card"
+        *ngFor="let group of skillGroups; let i = index"
+        appScrollReveal="flip-up"
+        [revealDelay]="i * 90">
+        <div class="group-header">
+          <div class="group-icon">
+            <i [class]="group.icon"></i>
+          </div>
+          <h3>{{ group.category }}</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag" *ngFor="let skill of group.skills">{{ skill }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

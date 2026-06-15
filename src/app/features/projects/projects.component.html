@@ -1,0 +1,49 @@
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-header" appScrollReveal="fade-up">
+      <span class="section-tag">{{ 'proj_tag' | translate }}</span>
+      <h2>{{ 'proj_title' | translate }}</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="filter-bar" appScrollReveal="fade-up" [revealDelay]="100">
+      <button
+        class="filter-btn"
+        *ngFor="let f of filters"
+        [class.active]="activeFilter === f"
+        (click)="setFilter(f)">
+        {{ filterLabel(f) }}
+      </button>
+    </div>
+
+    <div class="projects-grid">
+      <div
+        class="project-card card"
+        *ngFor="let project of filteredProjects; let i = index"
+        appScrollReveal="zoom-in"
+        [revealDelay]="(i % 3) * 80">
+        <div class="project-header">
+          <div class="project-icon">
+            <i [class]="getTypeIcon(project.type)"></i>
+          </div>
+          <span class="project-type" [class]="getTypeClass(project.type)">
+            {{ project.type }}
+          </span>
+        </div>
+
+        <h3 class="project-name">{{ project.name }}</h3>
+        <p class="project-desc" *ngIf="project.description">{{ project.description }}</p>
+
+        <div class="project-tags">
+          <span *ngFor="let tag of project.tags">{{ tag }}</span>
+        </div>
+
+        <div class="project-footer" *ngIf="project.url">
+          <a [href]="project.url" target="_blank" rel="noopener" class="project-link">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> {{ 'proj_visit' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
