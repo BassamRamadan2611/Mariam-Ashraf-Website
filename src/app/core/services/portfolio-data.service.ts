@@ -51,8 +51,8 @@ export class PortfolioDataService {
     location: 'Beni-Suef, Egypt',
     email: 'mariamash70@gmail.com',
     phone: '+201096838500',
-    linkedin: 'https://www.linkedin.com/in/mariam-ashraf',
-    github: 'https://github.com/mariam-ashraf',
+    linkedin: 'https://www.linkedin.com/in/mariam-ashraf-1a1a47199/',
+    github: 'https://github.com/MariamAshraf113',
     languages: ['Arabic (Native)', 'English'],
   };
 
@@ -90,10 +90,16 @@ export class PortfolioDataService {
   ];
 
   readonly experiences: Experience[] = [
+        {
+      role: 'WordPress Developer',
+      company: 'SocialZ Marketing Agency',
+      period: 'June 2025 – Present',
+      type: 'Full-time',
+    },
     {
       role: 'WordPress Developer',
       company: 'Us Group Company',
-      period: 'May 2024 – Present',
+      period: 'May 2024 – May 2025',
       type: 'Full-time',
     },
     {
@@ -129,6 +135,14 @@ export class PortfolioDataService {
   ];
 
   readonly projects: Project[] = [
+
+ 
+    {
+      name: 'Raadaljalid.com',
+      url: 'https://raadaljalid.com/',
+      type: 'Shopify',
+      tags: ['Shopify', 'E-commerce'],
+    },
     {
       name: 'Shopyneer.com',
       url: 'https://shopyneer.com',
